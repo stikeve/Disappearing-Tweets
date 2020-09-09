@@ -62,7 +62,7 @@ function CreateArea(props) {
     <div>
       <form name="test">
  
-        <textarea name="content" onChange={handleChange} value={tweet.content}placeholder="Tweet" rows="3" />
+        <textarea name="content" onChange={handleChange} value={tweet.content}placeholder="Tweet (Enter tweet here)" rows="3" />
         <p>input <em>Date and Time</em> to be deleted</p>
         <input name="somedate" onChange={handleChange} type="date" min={mindate} ></input>
         <input type="time" onChange={handleChange} min={mintime} name="time" />
