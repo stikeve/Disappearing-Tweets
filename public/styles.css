@@ -109,3 +109,8 @@ form button {
   cursor: pointer;
   outline: none;
 }
+
+form h6 {
+  color : rgb(240, 78, 78);
+  padding: 4px;
+}

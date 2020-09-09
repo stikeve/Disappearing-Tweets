@@ -46,7 +46,7 @@ function App() {
       
         var randate = year + '-' + month + '-' + day;
         var rantime = hours+ ':' + min;
-        
+        var emtime =  hours+ ':' + min+1 ;
         
         setTweets(prevTweets => {
             var id ;
@@ -55,6 +55,7 @@ function App() {
              id = prevTweets[i].somedate + prevTweets[i].time;
         //  console.log(id); testing if it works
              }
+        
         }
             
          return prevTweets.filter((oneTweet)=>{
@@ -62,6 +63,15 @@ function App() {
             return check !== id ;
        })
    })
+
+
+  
+    
+
+
+
+
+
         
     }, 1000);
 

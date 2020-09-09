@@ -41,19 +41,39 @@ function CreateArea(props) {
         });
     }
 
+
+
+    function checkDate(){
+        if(tweet.somedate)
+        {
+            return true;
+        }
+        else return false;
+    }
+
+    function checkTime(){
+        if(tweet.time)
+        {
+            return true;
+        }
+        else return false;
+    }
     //submit tweet button onClick
     function submitTweet(event){
 
+        // && tweet.somedate !== undefined && tweet.somedate !== '' 
+        // && tweet.time !== undefined && tweet.time !== ''
+        
        
-      
-        if(tweet.content !== ''  && tweet.somedate !== undefined && tweet.somedate !== '' && tweet.time !== undefined && tweet.time !== ''){
+        
+        if(tweet.content !== ''  ){
         props.onAdd(tweet);
-        }else{alert("there could be any of these 2 problems    1. cannot submit empty Tweet or date/time         2. date or time invalid ")}
+        }else{alert("there could be any of these 2 problems    1. cannot submit empty Tweet")}
         document.test.reset(); //to reset state of form name (test)
         setTweet({
-            somedate: "",
+            
             content: "",
-            time:""
+            
         });
         event.preventDefault();
     }
@@ -65,6 +85,7 @@ function CreateArea(props) {
  
         <textarea name="content" onChange={handleChange} value={tweet.content}placeholder="Tweet (Enter tweet here)" rows="3" />
         <p>input <em>Date and Time</em> to be deleted</p>
+        <h6>if any of date or time(past time not valid) is not entered tweet will never be deleted </h6>
         <input name="somedate" onChange={handleChange} type="date" min={mindate} ></input>
         <input type="time" onChange={handleChange} min={mintime} name="time" />
         <button onClick = {submitTweet}>Tweet</button>
