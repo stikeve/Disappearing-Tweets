@@ -46,9 +46,9 @@ function CreateArea(props) {
 
        
       
-        if(tweet.content !== '' && tweet.somedate !== undefined && tweet.time !== undefined){
+        if(tweet.content !== '' && tweet.somedate !== '' &&tweet.somedate !== undefined && tweet.time !== undefined && tweet.time !== ''){
         props.onAdd(tweet);
-        }else{alert("cannot submit empty Tweet or date/time without changing")}
+        }else{alert("there could be any of these 2 problems    1. cannot submit empty Tweet or date/time         2. date or time invalid ")}
         document.test.reset(); //to reset state of form name (test)
         setTweet({
             //  somedate: "", //tried to reset the date
