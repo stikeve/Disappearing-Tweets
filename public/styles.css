@@ -7,14 +7,18 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background: #eee;
+  background-color: #8a8586;
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+
+  overflow-x: hidden;
   padding: 0 16px;
 }
 
 header {
+  
   background-color: #1DA1F2;
   margin: auto -16px;
-  padding: 16px 32px;
+  padding: 16px 40px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -39,7 +43,7 @@ footer p {
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
-  padding: 10px;
+  padding: 15px;
   width: 240px;
   margin: 16px;
   float: left;
@@ -56,7 +60,7 @@ footer p {
   word-wrap: break-word;
 }
 
-.tweet button {
+/* .tweet button {
   position: relative;
   float: right;
   margin-right: 10px;
@@ -66,7 +70,7 @@ footer p {
   height: 36px;
   cursor: pointer;
   outline: none;
-}
+} */
 
 form {
   position: relative;
@@ -98,13 +102,13 @@ form input{
 form button {
   position: absolute;
   right: 18px;
-  bottom: -18px;
+  bottom: -26px;
   background: #1DA1F2;
   color: #fff;
   border: none;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 41px;
+  height: 41px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
@@ -113,4 +117,12 @@ form button {
 form h6 {
   color : rgb(240, 78, 78);
   padding: 4px;
+}
+
+.tweetIco{
+  position: relative;
+  left :47%;
+  top: -1.8rem;
+  padding-bottom: 0;
+  color:  #1DA1F2;
 }

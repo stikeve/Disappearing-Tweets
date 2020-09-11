@@ -2,7 +2,7 @@ import React from "react";
 
 
 function Header(){
-    return <header><h1> Disapering Tweets </h1>
+    return <header><h1> Disapering Tweets <i class="fab fa-twitter"></i></h1>
     
     </header>
 }
