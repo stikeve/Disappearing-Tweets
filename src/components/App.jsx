@@ -26,6 +26,7 @@ function App() {
     //        })
     //    })
     // }
+   
 
     window.setInterval(function(){ // Set interval for checking
         
@@ -46,13 +47,13 @@ function App() {
       
         var randate = year + '-' + month + '-' + day;
         var rantime = hours+ ':' + min;
-        var emtime =  hours+ ':' + min+1 ;
+        // var emtime =  hours+ ':' + min+1 ;
         
         setTweets(prevTweets => {
             var id ;
             for(var i = 0 ; i < prevTweets.length ; i++){
              if(prevTweets[i].somedate === randate && prevTweets[i].time === rantime){
-             id = prevTweets[i].somedate + prevTweets[i].time;
+             id = prevTweets[i].somedate + prevTweets[i].time; 
         //  console.log(id); testing if it works
              }
         
@@ -63,17 +64,8 @@ function App() {
             return check !== id ;
        })
    })
-
-
-  
-    
-
-
-
-
-
         
-    }, 1000);
+    }, 500);
 
     
 
