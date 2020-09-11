@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 
 
+
 function CreateArea(props) {
      //to get currnent date 
      var dtToday = new Date();
@@ -29,10 +30,13 @@ function CreateArea(props) {
         time:""
     });
 
+ 
+     
+
+
     //get the user input via onChange
     function handleChange(e){
-        const {name , value} = e.target;    
-
+        const {name , value} = e.target;   
         setTweet(prevTweet => {
             return{
                 ...prevTweet,
@@ -41,7 +45,7 @@ function CreateArea(props) {
         });
     }
 
-
+   
 
     // function checkDate(){
     //     if(tweet.somedate)
@@ -60,7 +64,7 @@ function CreateArea(props) {
     // }
     //submit tweet button onClick
     function submitTweet(event){
-
+        
         // && tweet.somedate !== undefined || tweet.somedate !== '' 
         // && tweet.time !== undefined || tweet.time !== ''
         
@@ -71,12 +75,15 @@ function CreateArea(props) {
             alert(" ERROR : Date cannot be empty.")
         }else if(tweet.time === undefined || tweet.time === ''){
             alert(" ERROR : Time cannot be empty.")
+        }else if(Date.parse(tweet.somedate+' '+tweet.time+':00') < Date.parse(mindate+' '+mintime+':00'))
+        {
+            alert(" ERROR : Past time not accepted.")
         }
-        else{
+        else{           
             props.onAdd(tweet);
         }
         
-
+        
        
         document.test.reset(); //to reset state of form name (test)
         setTweet({
@@ -87,6 +94,10 @@ function CreateArea(props) {
         event.preventDefault();
     }
 
+    
+  
+
+
     //component
   return (
     <div>
@@ -94,9 +105,10 @@ function CreateArea(props) {
  
         <textarea name="content" onChange={handleChange} value={tweet.content}placeholder="Tweet (Enter tweet here)" rows="3" />
         <p>input <em>Date and Time</em> to be deleted</p>
-        <h6>if Past time(past time not valid) is entered tweet will never be deleted </h6>
+        <h6>(Past time not valid) </h6>
         <input name="somedate" onChange={handleChange} type="date" min={mindate} ></input>
-        <input type="time" onChange={handleChange} min={mintime} name="time" />
+        <input id="timelim" type="time" onChange={handleChange} min={mintime} name="time" />
+      
         <button onClick = {submitTweet}>Tweet</button>
       </form>
     </div>
