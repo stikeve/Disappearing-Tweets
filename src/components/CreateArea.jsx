@@ -61,25 +61,23 @@ function CreateArea(props) {
     //submit tweet button onClick
     function submitTweet(event){
 
-        // && tweet.somedate !== undefined && tweet.somedate !== '' 
-        // && tweet.time !== undefined && tweet.time !== ''
+        // && tweet.somedate !== undefined || tweet.somedate !== '' 
+        // && tweet.time !== undefined || tweet.time !== ''
         
        
          if(tweet.content === ''  ){
-        alert(" 1. cannot submit empty Tweet")
+        alert(" ERROR : cannot submit empty Tweet.")
         }else if(tweet.somedate === undefined || tweet.somedate === '' ){
-            alert(" date empty")
+            alert(" ERROR : Date cannot be empty.")
         }else if(tweet.time === undefined || tweet.time === ''){
-            alert(" time empty")
+            alert(" ERROR : Time cannot be empty.")
         }
         else{
             props.onAdd(tweet);
         }
         
 
-        // if(tweet.content !== ''  ){
-        // props.onAdd(tweet);
-        // }else{alert("there could be any of these 2 problems    1. cannot submit empty Tweet")}
+       
         document.test.reset(); //to reset state of form name (test)
         setTweet({
             somedate: "",
